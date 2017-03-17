@@ -56,6 +56,10 @@ class RoverController:
       raise ValueError('Chek rover. It could be out of planetau')
     self.marsRover = marsRover
 
+  def getMarsRover(self):
+    """Return private property marsRover"""
+    return self.__marsRover
+
   def sendCommand(self, command):
     """Handle commands to move Rover"""
     if command not in utils.MovingDirections:
