@@ -4,6 +4,8 @@ CardinalDirections = ('N', 'E', 'S', 'W')
 class Coordinates2D:
   def __init__(self, x, y):
     """Init x,y coordinates"""
+    if (not isinstance(x, int) or not isinstance(y, int)):
+      raise ValueError('Check types')
     self.x = x
     self.y = y
 
