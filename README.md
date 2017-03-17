@@ -17,7 +17,7 @@ or right respectively, without moving from its current spot. M means move forwar
 one grid point, and maintain the same heading. Assume that the square directly 
 North from `(x, y)` is `(x, y+1)`.
 
-# Input
+## Input
 The first line of input is the upper-right coordinates of the plateau, the 
 lower-left coordinates are assumed to be `(0,0)` . The rest of the input is 
 information pertaining to the rovers that have been deployed. Each rover has 
@@ -30,10 +30,10 @@ rover will be finished sequentially, which means that the second rover won’t
 start to move until the first one has finished moving. You can use the file 
 `tests/test_inputs.txt` in your unit tests.
 
-# Output
+## Output
 The output for each rover should be its final co-ordinates and heading.
 
-# Example
+## Example
 ### Test input
     5 5
     1 2 N
@@ -44,3 +44,28 @@ The output for each rover should be its final co-ordinates and heading.
 ### Test output
     1 3 N
     5 1 E
+
+## Run description
+### Environment
+- `python3` (not supported for lower versions)
+- `unittest` - for testing solution
+
+### Structure
+    +--- mars_rover
+    | +--- lib # folder containing your source code
+    | +--- tests # folder containing your unit tests
+    | \--- README.md # Your assumptions and design decisions
+
+### Check solution
+Run `dispatcher.py` from `lib` to test with own input
+
+    python3 lib/dispatcher.py
+### Run tests
+
+Run all test in project in `tests` forler:
+
+    python3 -m unittest discover --pattern=*.py -v
+
+or each separately, for example:
+
+    python3 tests/dispatcher.py

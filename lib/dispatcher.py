@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+
+"""
+Dispatcher to send commands to RoverController
+Gives input data and parses it according instructions (see description)
+
+"""
+
 import utils
 from rovercontroller import Rover, RoverController
 from planetau import Planetau
@@ -61,4 +69,4 @@ if __name__ == '__main__':
       break
 
   d = Dispatcher(inputs)
-  # d.dispatch()
+  d.dispatch()

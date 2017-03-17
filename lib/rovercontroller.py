@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+
+"""
+Base classes for Rover movement
+Rover - contains position and can go under Controller's instructions
+RoverController - can give commands to rover to move in Planetau
+
+"""
+
 import utils
 from planetau import Planetau
 from copy import copy
@@ -98,3 +107,6 @@ class RoverController:
       raise IndexError('Rover can''t go out of bounds of Planetau' )
 
     self.marsRover.position = rawCoordinates
+
+if __name__ == '__main__':
+  pass

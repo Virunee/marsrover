@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+
+"""
+Base data for moving
+MovingDirections - all available commands to Rover
+CardinalDirections - all available directions to turn
+Coordinates2D - describes coordinates (x,y)
+
+"""
+
 MovingDirections = ('L', 'R', 'M')
 CardinalDirections = ('N', 'E', 'S', 'W')
 
@@ -21,4 +31,7 @@ class Coordinates2D:
 
   def __ne__(self, val):
     """Check if coordinates are not equal"""
-    return not self.__eq__(val) 
+    return not self.__eq__(val)
+
+if __name__ == '__main__':
+  pass

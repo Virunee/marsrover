@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+
+"""
+Planetau description
+Planetau - left-lower coordinates (0,0),
+           right-upper coordanates - given
+
+"""
+
 import utils
 from copy import copy
 
@@ -23,3 +32,6 @@ class Planetau:
 
     return (ckeckVal.x >= 0 and ckeckVal.x <= self.maxCoordinates.x and
             ckeckVal.y >= 0 and ckeckVal.y <= self.maxCoordinates.y)
+
+if __name__ == '__main__':
+  pass
