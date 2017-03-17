@@ -49,9 +49,7 @@ class Dispatcher:
     res = []
     for rc in self.__roverControllers:
       r = rc.marsRover
-      res.append("{0} {1} {2}".format(r.position.x, 
-                                      r.position.y,
-                                      r.direction))
+      res.append("{0}".format(r))
     return res
 
 
@@ -66,7 +64,16 @@ if __name__ == '__main__':
     inputs.append( input("Input command to Rover[{0}]: ".format(counter)) )
     if inputs[-1] == "":
       inputs.pop()
+      inputs.pop()
       break
 
-  d = Dispatcher(inputs)
-  d.dispatch()
+  d = None
+  try:
+    d = Dispatcher(inputs)
+    d.dispatch()
+  except Exception as e:
+   print ('Check input values!')
+
+  if d:
+    for r in d.getPositions():
+      print(r)

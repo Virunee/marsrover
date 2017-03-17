@@ -21,7 +21,7 @@ class Coordinates2D:
 
   def __repr__(self):
     """Return formatted representation string"""
-    return '(x={0}, y={1})'.format(self.x, self.y)
+    return '{0} {1}'.format(self.x, self.y)
 
   def __eq__(self, val):
     """Check if coordinates are equal"""

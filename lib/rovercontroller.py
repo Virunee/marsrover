@@ -26,7 +26,7 @@ class Rover:
 
   def __repr__(self):
     """Return formatted representation string"""
-    return "Mars Rover >> Current position: {0}; Direction: {1}".format(self.__position, self.__direction)
+    return "{0} {1}".format(self.__position, self.__direction)
 
   @property
   def direction(self):
