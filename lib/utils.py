@@ -9,7 +9,7 @@ Coordinates2D - describes coordinates (x,y)
 """
 
 MovingDirections = ('L', 'R', 'M')
-CardinalDirections = ('N', 'E', 'S', 'W')
+CardinalDirections = ('N', 'W', 'S', 'E')
 
 class Coordinates2D:
   def __init__(self, x, y):

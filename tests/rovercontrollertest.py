@@ -73,29 +73,29 @@ class TestRoverController(unittest.TestCase):
 
 
   def test_send_command_rotate_left(self):
-    """Check send commands to rover: N->E->S->W"""
+    """Check send commands to rover: N->W->S->E"""
     rc = RoverController(self._planetau, self._rover)
 
     rc.sendCommand("L")
-    self.assertEqual(rc.marsRover.direction, "E")
+    self.assertEqual(rc.marsRover.direction, "W")
     rc.sendCommand("L")
     self.assertEqual(rc.marsRover.direction, "S")
     rc.sendCommand("L")
-    self.assertEqual(rc.marsRover.direction, "W")
+    self.assertEqual(rc.marsRover.direction, "E")
     rc.sendCommand("L")
     self.assertEqual(rc.marsRover.direction, "N")
 
 
   def test_send_command_rotate_right(self):
-    """Check send commands to rover: N->W->S->E"""
+    """Check send commands to rover: N->E->S->W"""
     rc = RoverController(self._planetau, self._rover)
 
     rc.sendCommand("R")
-    self.assertEqual(rc.marsRover.direction, "W")
+    self.assertEqual(rc.marsRover.direction, "E")
     rc.sendCommand("R")
     self.assertEqual(rc.marsRover.direction, "S")
     rc.sendCommand("R")
-    self.assertEqual(rc.marsRover.direction, "E")
+    self.assertEqual(rc.marsRover.direction, "W")
     rc.sendCommand("R")
     self.assertEqual(rc.marsRover.direction, "N")
 
@@ -104,16 +104,16 @@ class TestRoverController(unittest.TestCase):
     """Check movind on 1 step according to direction"""
     rc = RoverController(self._planetau, self._rover)
 
-    rc.sendCommand("R")
+    rc.sendCommand("L")
     rc.sendCommand("M")
     self.assertEqual(rc.marsRover.position, utils.Coordinates2D(4, 100))
-    rc.sendCommand("R")
+    rc.sendCommand("L")
     rc.sendCommand("M")
     self.assertEqual(rc.marsRover.position, utils.Coordinates2D(4, 99))
-    rc.sendCommand("R")
+    rc.sendCommand("L")
     rc.sendCommand("M")
     self.assertEqual(rc.marsRover.position, utils.Coordinates2D(5, 99))
-    rc.sendCommand("R")
+    rc.sendCommand("L")
     rc.sendCommand("M")
     self.assertEqual(rc.marsRover.position, utils.Coordinates2D(5, 100))
 
@@ -121,7 +121,6 @@ class TestRoverController(unittest.TestCase):
     """Check movind out of planetau bounds"""
     rc = RoverController(self._planetau, self._rover)
 
-    rc.sendCommand("L")
     rc.sendCommand("R")
     self.assertRaises(IndexError, rc.sendCommand, "M")
 

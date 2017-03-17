@@ -34,7 +34,7 @@ class TestDispatcher(unittest.TestCase):
     except Exception:
       self.fail("Error in dispatchering")
 
-    expectedRes = ["1 3 N", "5 5 E"]
+    expectedRes = ["1 3 N", "5 1 E"]
     res = d.getPositions()
 
     self.assertNotEqual(res, None)
