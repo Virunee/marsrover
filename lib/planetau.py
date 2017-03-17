@@ -1,4 +1,5 @@
 import utils
+from copy import copy
 
 class Planetau:
   def __init__(self, maxPoint):
@@ -9,7 +10,7 @@ class Planetau:
       raise ValueError('Check type')
     
     if (maxPoint.x >= 0 and maxPoint.y >= 0):
-      self.maxCoordinates = maxPoint
+      self.maxCoordinates = copy(maxPoint)
 
   def __repr__(self):
     """Return formatted representation string"""
